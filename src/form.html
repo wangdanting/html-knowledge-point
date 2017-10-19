@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/my-handling-form-page" method="post">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text"
+               id="name"
+               value="by default this element is filled with this text"
+               name="user_name">
+    </div>
+    <div>
+        <label for="mail">E-mail:</label>
+        <input type="email"
+               id="mail"
+               name="user_email">
+    </div>
+    <div>
+        <label for="msg">Message:</label>
+        <textarea id="msg"
+                  name="user_message">by default this element is filled with this text</textarea>
+    </div>
+    <div>
+        <button type="submit">Send your message</button>
+    </div>
+    <div>
+        <button type="reset">Reset your message</button>
+    </div>
+</form>
+
+<form>
+    <fieldset>
+        <legend>Fruit juice size</legend>
+        <div>
+            <label for="size_1">Small</label>
+            <input type="radio" name="size" id="size_1" value="small">
+        </div>
+        <div>
+            <label for="size_2">Medium</label>
+            <input type="radio" name="size" id="size_2" value="medium">
+        </div>
+        <div>
+            <label for="size_3">Large</label>
+            <input type="radio" name="size" id="size_3" value="large">
+        </div>
+    </fieldset>
+</form>
+
+<form>
+    <div>
+        <label for="username">
+            <span>Name</span>
+            <input id="username" type="text" name="username">
+            <abbr title="required">*</abbr>
+        </label>
+    </div>
+    <div>
+        <label for="useremail">Name:<abbr title="required">*</abbr></label>
+        <input id="useremail" type="email" name="useremail">
+    </div>
+</form>
+
+<form>
+    <h1>Payment form</h1>
+    <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+    <section>
+        <h2>Contact information</h2>
+        <fieldset>
+            <legend>Title</legend>
+            <ul>
+                <li>
+                    <label for="title_1">
+                        <input type="radio" id="title_1" name="title" value="M.">
+                        Mister
+                    </label>
+                </li>
+                <li>
+                    <label for="title_2">
+                        <input type="radio" id="title_2" name="title" value="Ms.">
+                        Miss
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
+        <p>
+            <label for="name1">
+                <span>Name:</span>
+                <strong><abbr title="required">*</abbr></strong>
+            </label>
+           <input type="text" id="name1" name="name1">
+        </p>
+        <p>
+            <label for="mail1">
+                <span>E-mail:</span>
+                <strong><abbr title="required">*</abbr></strong>
+            </label>
+            <input type="email" id="mail1" name="mail1">
+        </p>
+        <p>
+            <label for="pwd1">
+                <span>Password:</span>
+                <strong><abbr title="required">*</abbr></strong>
+            </label>
+            <input type="password" id="pwd1" name="password1">
+        </p>
+    </section>
+    <section>
+        <h2>Payment information</h2>
+        <p>
+            <label for="card">
+                <span>Card type:</span>
+            </label>
+            <select id="card" name="usercard">
+                <option value="visa">Visa</option>
+                <option value="mc">Mastercard</option>
+                <option value="amex">American Express</option>
+            </select>
+        </p>
+        <p>
+            <label for="number">
+                <span>Card number:</span>
+                <strong><abbr title="required">*</abbr></strong>
+            </label>
+            <input type="text" id="number" name="cardnumber">
+        </p>
+        <p>
+            <label for="date">
+                <span>Expiration date:</span>
+                <strong><abbr title="required">*</abbr></strong>
+                <em>formatted as mm/yy</em>
+            </label>
+            <input type="text" id="date" name="expiration">
+        </p>
+        <p>
+            <button type="submit">Validate the payment</button>
+        </p>
+    </section>
+</form>
+</body>
+</html>
