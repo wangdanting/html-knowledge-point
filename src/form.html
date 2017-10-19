@@ -11,7 +11,8 @@
         <input type="text"
                id="name"
                value="by default this element is filled with this text"
-               name="user_name">
+               name="user_name"
+               autofocus>
     </div>
     <div>
         <label for="mail">E-mail:</label>
@@ -22,7 +23,8 @@
     <div>
         <label for="msg">Message:</label>
         <textarea id="msg"
-                  name="user_message">by default this element is filled with this text</textarea>
+                  name="user_message"
+                  readonly>by default this element is filled with this text</textarea>
     </div>
     <div>
         <button type="submit">Send your message</button>
@@ -33,7 +35,7 @@
 </form>
 
 <form>
-    <fieldset>
+    <fieldset disabled>
         <legend>Fruit juice size</legend>
         <div>
             <label for="size_1">Small</label>
@@ -140,5 +142,58 @@
         </p>
     </section>
 </form>
+
+<form>
+    <section>
+        <input type="text" id="text1" name="text1" value="I am a text field">
+        <input type="email" id="email1" name="email1" multiple>
+        <input type="password" id="pwd2" name="pwd2">
+        <input type="search" id="search1" name="search1">
+        <input type="tel" id="tel2" name="tel2">
+        <input type="url" id="url1" name="url1">
+    </section>
+    <section>
+        <textarea cols="30" rows="10"></textarea>
+    </section>
+    <section>
+        <select id="simple1" name="simple1">
+            <option selected>Banana</option>
+            <option>Cherry</option>
+            <option>Lemon</option>
+        </select>
+        <select id="groups1" name="groups">
+            <optgroup label="fruits">
+                <option>Banana</option>
+                <option selected>Cherry</option>
+                <option>Lemon</option>
+            </optgroup>
+            <optgroup label="vegetables">
+                <option>Carrot</option>
+                <option>Eggplant</option>
+                <option>Potato</option>
+            </optgroup>
+        </select>
+        <select multiple id="multi1" name="multi1">
+            <option>Banana</option>
+            <option>Cherry</option>
+            <option>Lemon</option>
+        </select>
+    </section>
+    <section>
+        <label for="myFruit">What's your favorite fruit?</label>
+        <input type="text" name="myFruit" id="myFruit" list="mySuggestion">
+        <datalist id="mySuggestion">
+            <option>Apple</option>
+            <option>Banana</option>
+            <option>Blackberry</option>
+            <option>Blueberry</option>
+            <option>Lemon</option>
+            <option>Lychee</option>
+            <option>Peach</option>
+            <option>Pear</option>
+        </datalist>
+    </section>
+</form>
+<div style="height: 500px"></div>
 </body>
 </html>
