@@ -193,6 +193,70 @@
             <option>Pear</option>
         </datalist>
     </section>
+    <section>
+        <label for="myFruit1">What is your favorite fruit? (with fallback)</label>
+        <input type="text" id="myFruit1" name="fruit" list="fruitList">
+        <datalist id="fruitList">
+            <label for="suggesion1">or pock a fruit</label>
+            <select id="suggesion1" name="altFruit">
+                <option>Apple</option>
+                <option>Banana</option>
+                <option>Blackberry</option>
+                <option>Blueberry</option>
+                <option>Lemon</option>
+                <option>Lychee</option>
+                <option>Peach</option>
+                <option>Pear</option>
+            </select>
+        </datalist>
+    </section>
+    <section>
+        <input type="checkbox" checked id="carrots" name="carrots" value="carrots">carrots
+    </section>
+    <section>
+        <input type="radio" checked id="soup" name="soup">soup
+    </section>
+    <section>
+        <fieldset>
+            <legend>What is your favorite meal?</legend>
+            <ul>
+                <li>
+                    <label for="soup1">Soup</label>
+                    <input type="radio" checked id="soup1" name="meal" value="suop">
+                </li>
+                <li>
+                    <label for="curry1">curry</label>
+                    <input type="radio" checked id="curry1" name="meal" value="curry">
+                </li>
+                <li>
+                    <label for="pizza1">pizza</label>
+                    <input type="radio" checked id="pizza1" name="meal" value="pizza">
+                </li>
+            </ul>
+        </fieldset>
+    </section>
+    <section>
+        <button type="submit">
+            This a<br><strong>submit button</strong>
+        </button>
+        <input type="submit" value="This is a submit button">
+    </section>
+    <section>
+        <button type="reset">
+            This a<br><strong>submit button</strong>
+        </button>
+        <input type="reset" value="This is a submit button">
+    </section>
+    <section>
+        <fieldset>
+            <legend>input type number</legend>
+            <input type="number" name="age1" id="age1" min="1" max="10" step="2">
+        </fieldset>
+        <fieldset>
+            <legend>input type range</legend>
+            <input type="range" name="beans1" id="beans1" min="0" max="500" step="10">
+        </fieldset>
+    </section>
 </form>
 <div style="height: 500px"></div>
 </body>
