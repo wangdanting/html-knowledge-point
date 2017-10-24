@@ -257,6 +257,59 @@
             <input type="range" name="beans1" id="beans1" min="0" max="500" step="10">
         </fieldset>
     </section>
+    <section>
+        <fieldset>
+            <legend>本地时间</legend>
+            <input type="datetime-local" name="datetime" id="datetime1">
+        </fieldset>
+        <fieldset>
+            <legend>月</legend>
+            <input type="month" name="month1" id="month1">
+        </fieldset>
+        <fieldset>
+            <legend>时间</legend>
+            <input type="time" name="time1" id="time1">
+        </fieldset>
+        <fieldset>
+            <legend>星期</legend>
+            <input type="week" name="week1" id="week1">
+        </fieldset>
+        <fieldset>
+            <legend>min max</legend>
+            <label for="myDate1">When are you available this summer?</label>
+            <input type="date" name="myDate1" min="2013-06-01" max="2013-08-31" id="myDate1">
+        </fieldset>
+    </section>
+    <section>
+        <fieldset>
+            <legend>拾色器</legend>
+            <input type="color" name="color" id="color">
+        </fieldset>
+    </section>
+    <section>
+        <fieldset>
+            <legend>文件选择器</legend>
+            <input type="file" name="file" id="file" accept="image/*" multiple>
+        </fieldset>
+        <fieldset>
+            <legend>隐藏内容</legend>
+            <input type="hidden" id="timestamp" name="timestamp" value="1286705410">
+        </fieldset>
+        <fieldset>
+            <legend>图像按钮</legend>
+            <input type="image" alt="Click me!" src="image/img1.png" width="80" height="30">
+            <p>当点击这个小部件的图像时，您将被发送到一个url</p>
+            <p>http://foo.com?pos.x=123&pos.y=456</p>
+        </fieldset>
+        <fieldset>
+            <legend>进度条</legend>
+            <progress max="100" value="75">75/100</progress>
+        </fieldset>
+        <fieldset>
+            <legend>仪表</legend>
+            <meter min="0" max="100" value="85" low="33" high="66" optimum="20">35</meter>
+        </fieldset>
+    </section>
 </form>
 <div style="height: 500px"></div>
 </body>
