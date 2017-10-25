@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input:invalid {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <fieldset>
+        <legend></legend>
+        <label></label>
+        <input type="email" id="mail">
+    </fieldset>
+</form>
+
+<form novalidate>
+    <fieldset>
+        <input type="email" >
+    </fieldset>
+</form>
+
+<form>
+    <p>
+        <label for="mail2">
+            <span>Please enter an email address:</span>
+            <input type="email" id="mail2" name="mail">
+            <span class="error" aria-live="polite"></span>
+        </label>
+    </p>
+    <button>Submit</button>
+</form>
+
+<script>
+ var email = document.getElementById('mail');
+ email.addEventListener('input', function(event) {
+     console.log(email.validationMessage, 'validationMessage');
+     console.log(email.validity, 'validity');
+     console.log(email.checkValidity(), 'pp');
+ })
+</script>
+</body>
+</html>
