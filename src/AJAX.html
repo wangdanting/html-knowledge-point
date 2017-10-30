@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<button type="button" onclick="sendData({test: 'ok'})">Click Me!</button>-->
+
+<!--<form id="myForm">-->
+    <!--<label for="myName">Send me your name:</label>-->
+    <!--<input id="myName" name="name" value="John">-->
+    <!--<input type="submit" value="Send Me!">-->
+<!--</form>-->
+
+<form id="myForm">
+    <p>
+        <label for="i1">text data:</label>
+        <input id="i1" name="myText" value="Some text data">
+    </p>
+    <p>
+        <label for="i2">file data:</label>
+        <input id="i2" name="myFile" type="file">
+    </p>
+    <button>Send Me!</button>
+</form>
+
+<script>
+    // XHR 1
+//    function sendData(data) {
+//        var XHR = new XMLHttpRequest();
+//        var urlEncodeData = '';
+//
+//        //将对象类型的数据转换成URL字符串
+//        for(name in data) {
+//            urlEncodeData += name + '=' + data[name] + '&';
+//        }
+//
+//        //删除掉最后的"&"字符
+//        urlEncodeData = urlEncodeData.slice(0, -1);
+//
+//        //将URL字符串进行百分号编码(UTF-8)
+//        urlEncodeData = encodeURIComponent(urlEncodeData);
+//
+//        //encodeURIComponent函数多编码了一些字符,我们需要还原.
+//        urlEncodeData = urlEncodeData.replace('%20', '+').replace('%3D', '=');
+//
+//        //定义数据成功发送并返回后执行的操作
+//        XHR.addEventListener('load',  function(event) {
+//            alert('Yeah! Data sent ant response loaded.')
+//        });
+//
+//        //定义发生错误时执行的操作
+//        XHR.addEventListener('error', function(event) {
+//            alert('Oups! Something goes wrong.')
+//        });
+//
+//        //设置请求地址和方法
+//        XHR.open('POST', 'http://ucommbieber.unl.edu/CORS/cors.php');
+//
+//        //根据HTTP协议,我们要添加一些POST请求提交表单时需要的请求头
+//        XHR.setRequestHeader('Content-Type', 'application/x-www-form-urlencodede');
+//        XHR.setRequestHeader('Content-Length', urlEncodeData.length);
+//
+//        //最后,发送我们的数据.
+//        XHR.send(urlEncodeData)
+//    }
+//
+//    // FormData对象
+//    function sendDataF(data) {
+//        var XHR = new XMLHttpRequest();
+//        var FD = new FormData();
+//
+//        // 把我们的数据添加到这个FormData对象中
+//        for(name in data) {
+//            FD.append(name, data[name]);
+//        }
+//
+//        //定义数据成功发送并返回后执行的操作
+//        XHR.addEventListener('load',  function(event) {
+//            alert('Yeah! Data sent ant response loaded.')
+//        });
+//
+//        //定义发生错误时执行的操作
+//        XHR.addEventListener('error', function(event) {
+//            alert('Oups! Something goes wrong.')
+//        });
+//
+//        //设置请求地址和方法
+//        XHR.open('POST', 'http://ucommbieber.unl.edu/CORS/cors.php');
+//
+//        //最后,发送我们的数据.
+//        XHR.send(FD);
+//    }
+//
+//
+//    window.addEventListener('load', function() {
+//        function sendData2() {
+//            var XHR = new XMLHttpRequest();
+//
+//            // We bind the FormData object and the form element
+//            var FD  = new FormData(form);
+//
+//            // We define what will happen if the data are successfully sent
+//            XHR.addEventListener("load", function(event) {
+//                alert(event.target.responseText);
+//            });
+//
+//            // We define what will happen if case of error
+//            XHR.addEventListener("error", function(event) {
+//                alert('Oups! Something goes wrong.');
+//            });
+//
+//            // We setup our request
+//            XHR.open("POST", "http://ucommbieber.unl.edu/CORS/cors.php");
+//
+//            // The data send are the one the user provide in the form
+//            XHR.send(FD);
+//        }
+//
+//        // We need to access the form element
+//        var form = document.getElementById("myForm");
+//
+//        // to takeover its submit event.
+//        form.addEventListener("submit", function (event) {
+//            event.preventDefault();
+//
+//            sendData2();
+//        });
+//    })
+
+    //FileReader
+    window.addEventListener('load', function() {
+        var text = document.getElementById('i1');
+        var file = {
+            dom: document.getElementById('i2'),
+            binary: null
+        };
+
+        // 适用FileReader API来访问文字内容
+        var reader = new FileReader();
+
+        // 应为FileReader API是异步的,我们需要把读取到的内容存储下来
+        reader.addEventListener('load', function() {
+            console.log(reader.result, 'reader');
+            file.binary = reader.result;
+        });
+
+        //
+
+
+    })
+
+
+</script>
+</body>
+</html>
