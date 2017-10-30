@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var img = new Image,
+        canvas = document.createElement("canvas"),
+        ctx = canvas.getContext('2d'),
+        src = "http://example.com/image";
+
+    // anonymous 对此元素的CORS请求将不设置凭据标志,说明不会通过 cookies，客户端 SSL 证书或 HTTP 认证交换用户凭据
+    // use-credentials,对此元素的CORS请求将设置凭证标志; 这意味着请求将提供凭据。
+
+    img.crossOrigin = 'Anonymous';
+
+    img.onload = function () {
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx.drawImage(img, 0, 0);
+        localStorage.setItem('savedImageData', canvas.toDataURL('image/png'));
+    };
+
+    img.src = src;
+
+    if(img.complete || img.complete === undefined) {
+        img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+        img.src = src;
+    }
+
+</script>
+
+<script  src="https://example.com/example-framework.js" crossorigin="anonymous"></script>
+</body>
+</html>
