@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通过rel="preload"进行内容预加载</title>
+
+    <link rel="preload" herf="style.css" as="style">
+    <link rel="preload" href="main.js" as="script">
+
+    <link rel="preload" href="sintel-short.mp4" as="video" type="video/mp4">
+
+    <link rel="preload" href="fonts/cicle_fina-webfont.eot" as="font" type="application/vnd.ms-fontobject" crossorigin="anonymous">
+    <link rel="preload" href="fonts/cicle_fina-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/cicle_fina-webfont.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" href="fonts/cicle_fina-webfont.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" href="fonts/cicle_fina-webfont.svg" as="font" type="image/svg+xml" crossorigin="anonymous">
+
+    <link rel="preload" href="bg-image-narrow.png" as="image" media="(max-width: 600px)">
+    <link rel="preload" href="bg-image-wide.png" as="image" media="(min-width: 601px)">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--你可能希望在页面加载的生命周期的早期阶段就开始获取，
+在浏览器的主渲染机制介入前就进行预加载。这一机制使得资源可以更早的得到加载并可用，
+且更不易阻塞页面的初步渲染，进而提升性能。-->
+
+<h3>哪些类型的内容可以被预加载？</h3>
+<ul>
+    <li>audio: 音频文件。</li>
+    <li>document: 一个将要被嵌入到<frame>或<iframe>内部的HTML文档。</li>
+    <li>embed: 一个将要被嵌入到<embed>元素内部的资源。</li>
+    <li>fetch: 那些将要通过fetch和XHR请求来获取的资源，比如一个ArrayBuffer或JSON文件</li>
+    <li>font: 字体文件。</li>
+    <li>image: 图片文件。</li>
+    <li>object: 一个将会被嵌入到<embed>元素内的文件。</li>
+    <li>script: JavaScript文件。</li>
+    <li>style: 样式表。</li>
+    <li>track: WebVTT文件。</li>
+    <li>worker: 一个JavaScript的web worker或shared worker。</li>
+    <li>video: 视频文件</li>
+</ul>
+
+<video controls>
+    <source src="sintel-short.mp4" type="video/mp4">
+    <source src="sintel-short.webm" type="video/webm">
+    <p>Your browser doesn't support HTML5 video. Here is a <a href="sintel-short.mp4">link to the video</a> instead.</p>
+</video>
+
+
+<h3>跨域获取</h3>
+
+<h3>包含媒体, 能够使用响应式的预加载</h3>
+<header>
+    <h1>My site</h1>
+</header>
+
+<h3>脚本化与预加载</h3>
+<p>另一项很棒的关于预加载的事情是，如果需要，你可以完全以脚本化的方式来执行这些预加载操作。例如，我们在这里创建一个HTMLLinkElement实例，然后将他们附加到DOM上：</p>
+
+<script src="main.js"></script>
+
+<script>
+    var mediaQueryList = window.matchMedia("(max-width: 600px)");
+    var header = document.querySelector('header');
+
+    if(mediaQueryList.matches) {
+        header.style.backgroundImage = 'url(bg-image-narrow.png)';
+    } else {
+        header.style.backgroundImage = 'url(bg-image-wide.png)';
+    }
+</script>
+
+
+<!--另一项很棒的关于预加载的事情是，如果需要，你可以完全以脚本化的方式
+来执行这些预加载操作。例如，我们在这里创建一个HTMLLinkElement实例，
+然后将他们附加到DOM上
+这意味着浏览器将预加载这个JavaScript文件，但并不实际执行它。：-->
+<script>
+    var preloadLink = document.createElement("link");
+    preloadLink.href = "myscript.js";
+    preloadLink.rel = "preload";
+    preloadLink.as = "script";
+    document.head.appendChild(preloadLink);
+</script>
+
+<!--如果要对其加以执行，在需要的时候，你可以执行：-->
+<script>
+    var preloadedScript = document.createElement("script");
+    preloadedScript.src = "myscript.js";
+    document.body.appendChild(preloadedScript);
+</script>
+</body>
+</html>
