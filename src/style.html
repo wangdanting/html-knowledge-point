@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>style</title>
+
+    <style type="text/css" title="" media="screen AND (min-width: 500px)"></style>
+</head>
+<body>
+<ul>
+    <h3>media属性中的设备类型</h3>
+    <li>all: 将样式用于所有设备(默认值)</li>
+    <li>aural: 将样式用于语音合成器</li>
+    <li>braille: 将样式用于忙问设备</li>
+    <li>handheld: 将样式用于手持设备</li>
+    <li>projection: 将样式用于投影机</li>
+    <li>print: 将样式用于打印浏览浏览和打印页面时</li>
+    <li>screen: 将样式用于计算机显示器屏幕</li>
+    <li>tty: 将样式用于电传打字机之类的等宽设备</li>
+    <li>tv: 将样式用于电视机</li>
+</ul>
+
+<ul>
+    <h3>指定特性</h3>
+    <li>width height: 指定浏览器窗口的宽度和高度, 单位px 例如:width: 200px</li>
+    <li>device-width device-height: 指定整个设备(不仅仅时浏览器窗口)的宽度和高度，单位:px, 例如：min-device-height: 200px</li>
+    <li>resolution: 指定设备的像素密度， 单位dpi(点／英寸)或dpcm(点／厘米)，例如：max-resolution:600dpi</li>
+    <li>orientation: 指定设备的较长边朝向，可选值为portrait和landscape</li>
+    <li>aspect-ratio device-aspect-ratio: 指定浏览器窗口或整个设备的像素宽高比，例如：min-aspect-ratio: 16/9</li>
+    <li>color monochrome: 指定彩色或黑白设备上每个像素占用的二进制位数， 例如: min-monochrome: 2</li>
+    <li>color-index: 指定设备所能显示的颜色数目 例如max-color-index:256</li>
+    <li>scan: 指定电视的扫描模式，包括值progressive 和 interlace</li>
+    <li>grid: 指定设备的类型，支持的值为0和1(1代表网格型设备，使用固定的网格显示内容)</li>
+</ul>
+
+<article>
+    <div>The scoped attribute allows for you to include style elements mid-document.Inside rules only apply to the parent element.</div>
+    <p>This text should be black. If it is red your browser does not support the scoped attribute.</p>
+    <section>
+        <style scoped>
+            p {
+                color: red;
+            }
+        </style>
+        <p>This should be red.</p>
+    </section>
+</article>
+</body>
+</html>
