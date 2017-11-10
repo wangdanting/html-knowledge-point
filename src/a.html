@@ -12,6 +12,58 @@
 <a href="#">返回顶部</a>
 <a href="#top">返回顶部</a>
 
+<!--指定了目标对象到链接对象的关系，用空格分开-->
+<a rel="author" href="https://www.baidu.com">链接</a> <!--定义一个超链接到一个描述作者信息的页面或者提供一个方法联系作者-->
 
+<a rel="bookmark" href="https://www.baidu.com">链接</a>
+
+<a rel="external" href="https://www.baidu.com">链接</a> <!--表明这个链接，是一个相对于当前网站的外部资源，点击这个链接会离开当前网战-->
+
+<a rel="help" href="https://www.baidu.com">链接</a><!--表明这个链接，链接到一个关于父亲标签和它的后代的进一步帮助资源-->
+
+<a rel="license" href="https://www.baidu.com">链接</a> <!--表明超链接到描述许可信息的文档-->
+
+<a rel="next" href="https://www.baidu.com">链接</a> <!--表明超链接到当前页面所在序列的下一个资源-->
+
+<a rel="prev" href="https://www.baidu.com">链接</a> <!--表明超链接到当前页面所在序列的前一个资源-->
+
+<a rel="nofollow" href="https://www.baidu.com">链接</a> <!--表明本文档的作者不想被搜索引擎爬虫-->
+
+<a rel="noopener" href="https://www.baidu.com">链接</a>
+
+<a rel="noreferrer" href="https://www.baidu.com">链接</a> <!--阻止浏览器跳到另一个页面时，通过HTTP头，发送当前页面的名字或其他值，以及把当前页设为另一个页面的引用-->
+
+<a rel="search" href="https://www.baidu.com">链接</a> <!--表示超链接引用一个文档，其界面是专门为在本文档或网站及其资源忠搜索而设计的-->
+
+<a rel="tag" href="https://www.baidu.com">链接</a> <!--表明超链接引用描述适用与此文档标签的文档-->
+
+<!--指定在何处显示超链接的资源-->
+<a target="_self" href="https://www.baidu.com">链接</a>
+<a target="_blank" href="https://www.baidu.com">链接</a>
+<a target="_parent" href="https://www.baidu.com">链接</a>
+<a target="_top" href="https://www.baidu.com">链接</a>
+
+<!--链接到本页的某个部分-->
+<a href="#属性">description of same-page links</a>
+
+<!--创建电话链接-->
+<!--提供电话链接有助于用户查看链接到手机的网络文档和笔记本电脑-->
+<a href="tel:+491570156">链接</a>
+
+<a href="#">xx1</a>
+<a href="javascript:void(0)">xx2</a>
+
+<!--适用download属性保存画布为PNG格式-->
+<script>
+    let link = document.createElement('a');
+    link.innerHTML = 'download image';
+
+    link.addEventListener('click', () => {
+        link.href = canvas.toDataURL();
+        link.download = 'mypainting.png';
+    }, false);
+
+    document.body.appendChild(link);
+</script>
 </body>
 </html>
