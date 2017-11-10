@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dfn</title>
+</head>
+<body>
+<h3>定义元素表示术语的定义</h3>
+<ul>
+    <li>如果dfn元素有一个title属性，那么该术语的值就是该属性的值</li>
+    <li>如果它仅包含一个abbr元素，该元素拥有title属性，那么该术语的值就是该属性的值</li>
+    <li>否则，dfn元素的文本内容就是该术语的值</li>
+</ul>
+
+<p><dfn id="def-internet">The Internet</dfn> is a global system of interconnected networks</p>
+
+<dl>
+    <dt>
+        <dfn>
+            <abbr title="World-Wide Web">WWW</abbr>
+        </dfn>
+    </dt>
+    <dd>The World-Wide Web (WWW) is a system of interlinked hypertext documents accessed on <a href="#def-internet">the Internet</a>.</dd>
+</dl>
+</body>
+</html>
