@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>img</title>
+</head>
+<ul>
+    <li>crossorigin 这个枚举属性表明是否必须使用CORS完成相关图像的抓取，启用CORS的图像在canvas元素中可以重复使用而不会被污染
+        <ol>
+            <li>anonymous 执行一个跨域请求(比如，有Origin:HTTP header)。但是没有发送证书(比如，没有cookie, 没有X.509证书，没有HTTP基本的授权认证)。如果服务器没有给源站证书(没有设置Access-Control-Allow-Origin:HTTP头)，图像会被污染而且它的使用会被限制</li>
+            <li>use-credentials 一个有证书的跨域请求(比如，有Origin:HTTP header)被发送(比如，a cookie, a certificate, and HTTP Basic authentication is performed)。如果服务器没有给源站发送证书(通过Access-Control-Allow-Credentials:HTTP header), 图像将会被污染，且它的使用会受限制</li>
+        </ol>
+    </li>
+    <li>当用户并未显示使用本属性时，默认不使用CORS发起请求(例如，不会向服务器发送HTTP头部信息)，用以防止其在canvas中的使用，如果无效，默认当做an</li>
+</ul>
+<body>
+<img alt="替代文本" crossorigin="anonymous">
+</body>
+</html>
