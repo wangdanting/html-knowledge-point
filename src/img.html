@@ -11,9 +11,20 @@
             <li>use-credentials 一个有证书的跨域请求(比如，有Origin:HTTP header)被发送(比如，a cookie, a certificate, and HTTP Basic authentication is performed)。如果服务器没有给源站发送证书(通过Access-Control-Allow-Credentials:HTTP header), 图像将会被污染，且它的使用会受限制</li>
         </ol>
     </li>
-    <li>当用户并未显示使用本属性时，默认不使用CORS发起请求(例如，不会向服务器发送HTTP头部信息)，用以防止其在canvas中的使用，如果无效，默认当做an</li>
+    <li>当用户并未显示使用本属性时，默认不使用CORS发起请求(例如，不会向服务器发送HTTP头部信息)，用以防止其在canvas中的使用，如果无效，默认当做anonymous关键字生效</li>
 </ul>
 <body>
-<img alt="替代文本" crossorigin="anonymous">
+<img src="https://developer.mozilla.org/"
+     alt="替代文本"
+     crossorigin="anonymous">
+<!--使用srcset属性 在支持srcset的用户代理中，src属性是1x候选项-->
+<img src="mdn-logo-sm.png"
+     alt="MDN"
+     srcset="mdn-logo-HD.png 2x">
+<!--使用srcset和sizes属性-->
+<!--支持srcset的用户代理中，当使用'w'描述符时，src属性会被忽略。当匹配了媒体条件min-width:600px时，图像将宽200px,否则宽50vw(视图宽度的50%)-->
+<img src="clock-demo-thumb-200.png"
+     alt="Clock"
+     srcset="clock-demo-thumb-200.png 200w, clock-demo-thumb-400.png 400w" sizes="(min-width: 600px) 200px, 50vw">
 </body>
 </html>
