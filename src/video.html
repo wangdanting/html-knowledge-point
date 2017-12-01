@@ -6,6 +6,35 @@
 </head>
 <body>
 
+<ul>
+    <li>autoplay: 布尔属性，指定后视频会马上开始播放，不会停下来等着数据载入结束</li>
+    <li>buffered: 这个属性可以读取到哪段时间范围内的媒体被缓存了，该属性包含了一个TimeRanges对象</li>
+    <li>controls: 加上这个属性, Gecko会提供用户控制，允许用户控制视频的播放，包含音量，跨帧，暂停／恢复播放</li>
+    <li>crossorigin: 该枚举属性指明抓取相关图片是否必须用到CORS(跨域资源共享)。支持CORS的资源可在canvas元素中被重用，而不会被污染，允许的值如下:
+        <ul>
+            <li>anonymous: 跨域请求(即，使用Origin:的HTTP头)会被执行,但是不发送凭证(即，不发送cookie,X.509证书或者HTTP Basic授权)。如果服务器不提供证书给源站点(Access-Control-Allow-Origin: HTTP头),图片会被污染并且它的使用会受限</li>
+            <li>use-credentials: 跨域请求A cross-origin request(i.e. with Origin: HTTP header)会被执行，且凭证会被发送(即，发送一个cookie,一个证书和HTTP Basic授权会被执行)。如果服务器不提供证书给源站点(Access-Control-Allow-Origin: HTTP头),图片会被污染并且它的使用会受限</li>
+            <li>不加这个属性时，抓取资源不会走CORS请求(即，不会发送Origin:HTTP头)，保证在canvas元素中使用时不会被污染。如果指定非法值，会被当做指定了枚举关键字anonymous一样使用。</li>
+        </ul>
+    </li>
+    <li>height: 视频展示区域的高度，单位时CSS像素</li>
+    <li>loop: 布尔属性，指定后，会在视频结尾的地方，自动返回视频开始的地方</li>
+    <li>muted: 布尔属性，指定后，会在视频结尾的地方，自动返回视频开始的地方</li>
+    <li>played: 一个TimeRanges对象，指明了视频已经播放的所有范围</li>
+    <li>preload: 该枚举属性意旨在告诉浏览器作者认为达到最佳的用户体验的方式是什么。可能是下列值之一:
+        <ul>
+            <li>none: 提示作者认为用户不需要查看该视频，服务器也想要最小化反问流量，换句话说就是提示浏览器该视频不需要缓存</li>
+            <li>metadata: 提示尽管作者认为用户不需要查看该视频，不过抓取元数据(比如:长度)还是很合理的</li>
+            <li>auto: 用户需要这个视频优先加载;换句话说就是提示: 如果需要的话，可以下载整个视频，即时用户并不一定会用它。</li>
+            <li>空字符串: 也就指代auto值</li>
+            <li>默认值为浏览器定义，不同浏览器会选择自己的默认值</li>
+        </ul>
+    </li>
+    <li>poster: 一个海报帧的URL,用于在用户播放或者跳帧之前展示，如果属性未指定，那么在第一帧可用之前什么都不会展示，之后第一帧就像海报帧一样展示。</li>
+    <li>src: 要嵌到页面的视频的URL。可选;你也可以使用video块内的source元素来指定需要嵌到页面的视频</li>
+    <li>width: 视频显示区域的宽度，单位是css像素</li>
+</ul>
+
 <video src="rabbit320.mp4" controls>
     <p>Your browser doesn't support HTML5 video.</p>
 </video>
@@ -27,6 +56,11 @@
     <source src="rabbit320.mp4" type="video/mp4">
     <source src="rabbit320.webm" type="video/webm">
     <p>Your browser doesn't support HTML5 video.</p>
+</video>
+
+<video src="foo.ogg">
+    <track kind="subtitles" src="foo.en.vtt" srclang="en" label="English">
+    <track kind="subtitles" src="foo.sv.vtt" srclang="sv" label="Svenska">
 </video>
 </body>
 </html>

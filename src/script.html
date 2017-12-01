@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>script</title>
+</head>
+<body>
+<ul>
+    <li>async: 该布尔属性指示浏览器是在是否在允许的情况下异步执行该脚本，该属性对于内联脚本无作用(即没有src属性的脚本)</li>
+    <li>defer: 这个布尔属性被设定用来通知浏览器该脚本将在文档完成解析后，触发DOMContentLoaded事件前执行，如果缺少src属性(即内嵌脚本)，该属性不应该被使用，因为这种情况下它不起作用</li>
+    <li>integrity: 包含用户代理可用于验证已提取资源是否已无意外操作的内联元数据</li>
+</ul>
+<script src="javascript.js" async="true">
+
+</script>
+</body>
+</html>

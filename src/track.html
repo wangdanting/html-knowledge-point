@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>track</title>
+</head>
+<body>
+<h3>track元素被当做媒体元素audio和video的子元素来使用。它允许指定计时字幕(或者基于事件的数据)，例如自动处理字幕</h3>
+
+<ul>
+    <li>default: 该属性定义了该track应该启用，除非用户首选项指定了更合适一个track,每个媒体元素里面只有一个track元素可以有这个属性</li>
+    <li>kind: 定义了text track应该如何使用。如果省略了该属性，默认的kind值就是subtitles
+        <ul>
+            <li>subtitles 字幕给观影者看不懂的内容提供了翻译，比如英文电影里非英文的对话框或者文字,字幕可能包含额外的内容，通常有附加的背景信息。比如在电影星球大战开头的文字，或者某个场景的日期、时间和地点</li>
+            <li>captions 隐藏式字幕提供了音频的转录甚至是翻译，可能包含重要的非语言的信息，比如音乐提示或者音效，可以指定提示音的源文件,适用雨耳聋的用户或者当成静音的时候</li>
+            <li>descriptions 视频内容的文本描述，适用于失明用户或者当视频不可见的场景</li>
+            <li>chapters 章节标题用于用户浏览媒体资源的时候</li>'
+            <li>metadata 脚本使用的track 对用户不可见</li>
+        </ul>
+    </li>
+    <li>label 当列出可用的text tracks时，给浏览器使用的text track的标题，这种标题时用户可读的</li>
+    <li>src track的地址，必须是合法的URL,该属性必须定义</li>
+    <li>srclang track文本数据的语言。</li>
+</ul>
+
+<video controls>
+    <source src="sample.ogv" type="video/ogv">
+    <track kind="captions" src="sampleCaptions.srt" srclang="en">
+    <track kind="descriptions" src="sampleDesciptions.srt" srclang="en">
+    <track kind="chapters" src="sampleChapters.srt" srclang="en">
+    <track kind="subtitles" src="sampleSubtitles_de.srt" srclang="de">
+    <track kind="subtitles" src="sampleSubtitles_en.srt" srclang="en">
+    <track kind="subtitles" src="sampleSubtitles_ja.srt" srclang="ja">
+    <track kind="subtitles" src="sampleSubtitles_oz.srt" srclang="oz">
+    <track kind="metadata" src="keyStage1.srt" srclang="en" label="Key State 1">
+    <track kind="metadata" src="keyState2.srt" srclang="en" label="Key State 2">
+    <track kind="metadata" src="KeyState3.srt" srclang="en" label="Key State 3">
+</video>
+</body>
+</html>
